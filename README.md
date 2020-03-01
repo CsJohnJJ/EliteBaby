@@ -22,7 +22,7 @@ In Elite Baby, users will be able to:
 ## Implementation Timeline 
 
 - Day 1
-	  - Game logic/canvas/research
+    - Game logic/canvas/research
 - Day 2
     - Game logic/canvas(TBA)
 - Day 3
