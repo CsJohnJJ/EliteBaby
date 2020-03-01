@@ -14,6 +14,8 @@ In Elite Baby, users will be able to:
 
 ## Wireframes 
 
+<img src="https://user-images.githubusercontent.com/50147749/75635796-e2914b80-5be6-11ea-9064-05eb56cad8cd.png">
+https://wireframe.cc/O51HuI
 
 ## Architecture and Technology
 - JavaScript
