@@ -8,9 +8,9 @@ Difficulty will increase overtime, the longer the user plays without restarting.
 
 In Elite Baby, users will be able to:
   - Move left and right
-   - Jump up 
-    - Collect coins
-    - See current score
+  - Jump up 
+  - Collect coins
+  - See current score
 
 ## Wireframes 
 
