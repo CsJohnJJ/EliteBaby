@@ -21,15 +21,15 @@ In Elite Baby, users will be able to:
 
 ## Implementation Timeline 
 
-Day 1
+- Day 1
 	  - Game logic/canvas/research
-Day 2
+- Day 2
     - Game logic/canvas(TBA)
-Day 3
+- Day 3
     - Game logic/canvas(TBA)
-Day 4
+- Day 4
     - Game logic/canvas(TBA)
-Day 5
+- Day 5
     - Game logic/canvas(TBA)
 
 ## Bonus Features
