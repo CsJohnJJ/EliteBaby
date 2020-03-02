@@ -1,7 +1,7 @@
 # Elite Baby 
 
 ## Background and Overview
-Elite Baby is a platform game which a user controls a baby who crawls and hops onto platforms and objects to collect toys/foods/things baby like(coins). Some of these coins will be power ups to help user through the game. User will also avoid adults/other things baby dislike(enemies). Being caught by an enemy will restart the game.
+Elite Baby is a platform game which a user controls a baby who crawls/runs and hops/jumps onto platforms and objects to collect toys/foods/things baby like(coins). Some of these coins will be power ups to help user through the game. User will also avoid adults/other things baby dislike(enemies). Being caught by an enemy will restart the game.
 Difficulty will increase overtime, the longer the user plays without restarting. 
 
 ## Functionality and MVPs 
@@ -10,6 +10,7 @@ In Elite Baby, users will be able to:
   - Move left and right
   - Jump up 
   - Collect coins
+  - Power up
   - See current score
 
 ## Wireframes 
