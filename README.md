@@ -35,3 +35,5 @@ https://wireframe.cc/O51HuI
     - Game logic/canvas(TBA)
 
 ## Bonus Features
+
+- User able to attack enemies
