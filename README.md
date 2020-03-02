@@ -37,3 +37,4 @@ https://wireframe.cc/O51HuI
 ## Bonus Features
 
 - User able to attack enemies
+- Platform is moving, disppearing
