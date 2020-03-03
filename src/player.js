@@ -4,19 +4,28 @@ export default class Player {
         this.canvasHeight = canvasHeight;
         this.playerWidth = 60;
         this.playerHeight = 80;
-        this.jumping = true;
+        this.ground = true;
+        this.jumping = false;
+        this.falling = false;
+        this.jumpCount = 2
         this.positionX = 50;
         this.positionY = 400,
         this.dx = 0;
-        this.dy = 0;
-        this.speed = 4
-        // this.detectWalls = this.detectWalls.bind(this)
+        this.dy = 5;
+        this.speed = 4;
+        this.jump = this.jump.bind(this);
+        // this.onGround = this.onGround.bind(this);
     }
 
-    animate(ctx) {
-        this.movePlayer();
-        this.drawPlayer(ctx);
-    }
+
+
+    // // not used
+    // animate(ctx) {
+    //     this.movePlayer();
+    //     this.drawPlayer(ctx);
+    // }
+
+
 
     drawPlayer(ctx) {
         const playerImage = new Image();
@@ -36,11 +45,13 @@ export default class Player {
             case "right":
                 this.dx = 5;
                 break;
-            case "up":
-                this.dy = -8;
-                break
+            // case "up":
+            //     this.dy = -8;
+            //     break
             case "gravity":
-                this.dy = 4
+                this.dy = 7;
+                this.jumping = false;
+                // this.falling = true
                 break    
         }
     }
@@ -70,6 +81,34 @@ export default class Player {
 
         this.detectWalls();
     }
+
+
+    jump() {
+        if (!this.jumping && !this.falling){
+            this.jumping = true;
+            this.dy -= 14;
+        }
+    }
+
+
+
+    // double jump need fix, laggy
+    // jump() {
+    //     if (this.jumpCount === 2) {
+    //         this.dy -= 11;
+    //         this.jumpCount = 1;
+    //     } else if (this.jumpCount === 1) {
+    //         this.dy -= -12;
+    //         this.jumpCount = 0
+    //     } else if (this.jumpCount === 0 && this.ground === true){
+    //         this.jumpCount = 2
+    //     }
+    // }
+
+    onGround(){
+        (this.positionY + this.playerHeight === this.canvasHeight) ? this.falling = false : null
+    }
+
 
 }
 
