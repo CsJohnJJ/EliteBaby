@@ -40,7 +40,7 @@ export default class Player {
                 this.dy = -8;
                 break
             case "gravity":
-                this.dy = 3
+                this.dy = 4
                 break    
         }
     }
