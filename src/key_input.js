@@ -9,7 +9,10 @@ export default class KeyInput {
                     player.movePlayer("left");
                     break;
                 case 38:
-                    player.movePlayer("up");
+                    // player.movePlayer("up");
+                    player.jump();
+                    // player.ground = false
+                    // player.onGround();
                     break;
                 case 39:
                     player.movePlayer("right");
@@ -27,6 +30,7 @@ export default class KeyInput {
                     break;
                 case 38:
                     player.movePlayer("gravity");
+                    // player.onGround();
                     break;
                 case 39:
                     player.movePlayer("none");
