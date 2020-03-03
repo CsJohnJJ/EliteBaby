@@ -24,7 +24,7 @@ export default class Player {
         ctx.drawImage(playerImage, this.positionX, this.positionY, this.playerWidth, this.playerHeight);
     }
 
-    movePlayer(){
+    movePlayer(direction){
         //change the movement of player base on key input
         switch (direction) {
             case "none":
@@ -32,6 +32,7 @@ export default class Player {
                 break;
             case "left":
                 this.dx = -5;
+                break
             case "right":
                 this.dx = 5;
                 break;
@@ -67,8 +68,8 @@ export default class Player {
         this.positionX += this.dx;
         this.positionY += this.dy;
 
-        detectWalls();
+        this.detectWalls();
     }
-    
+
 }
 

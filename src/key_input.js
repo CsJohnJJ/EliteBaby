@@ -3,7 +3,7 @@
 export default class KeyInput {
     constructor(player){
 
-        document.addEventListtener("keydown", event => {
+        document.addEventListener("keydown", event => {
             switch(event.keyCode){
                 case 37:
                     player.movePlayer("left");
@@ -35,7 +35,7 @@ export default class KeyInput {
                 //     player.playerAttack();
                 //     break
             }
-        })
+        });
 
     }
 }

@@ -15,7 +15,7 @@ export default class EliteBaby {
 
     newGame(){
         this.player = new Player(this.canvasWidth, this.canvasHeight);
-        this.player.renderCharactor(this.ctx);
+        this.player.drawPlayer(this.ctx);
         new KeyInput(this.player);
     }
 
@@ -24,9 +24,9 @@ export default class EliteBaby {
     }
 
     gameUpdate(){
-        clear();
-        this.player.drawPlayer(this.ctx);
+        this.clear();
         this.player.newPos();
+        this.player.drawPlayer(this.ctx);
         requestAnimationFrame(this.gameUpdate);
     }
 
