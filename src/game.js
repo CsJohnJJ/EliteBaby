@@ -1,6 +1,8 @@
 import Player from "./player";
 import KeyInput from "./key_input";
 
+import BackgroundLayer from "./background_layer";
+
 
 export default class EliteBaby {
     constructor(canvas){
@@ -17,6 +19,9 @@ export default class EliteBaby {
         this.player = new Player(this.canvasWidth, this.canvasHeight);
         this.player.drawPlayer(this.ctx);
         new KeyInput(this.player);
+
+        this.backgroundlayer = new BackgroundLayer(this.canvasWidth, this.canvasHeight);
+        this.backgroundlayer.drawLayer(this.ctx);
     }
 
     clear(){
@@ -25,6 +30,7 @@ export default class EliteBaby {
 
     gameUpdate(){
         this.clear();
+        this.backgroundlayer.drawLayer(this.ctx);
         this.player.newPos();
         this.player.drawPlayer(this.ctx);
         requestAnimationFrame(this.gameUpdate);
