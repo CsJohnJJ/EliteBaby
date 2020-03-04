@@ -35,10 +35,10 @@ export default class BackgroundLayer{
         let { canvas, ctx, canvasWidth, canvasHeight, layerImg, imgPosX, imgPosY, imgX } = this;
         // debugger
         function loop(){
-            // ctx.clearRect(0,0, 1000, 600);
+            ctx.clearRect(0,0, 1000, 600);
             // ctx.drawImage(layerImg, imgPosX, imgPosY, canvasWidth, canvasHeight);
             // ctx.drawImage(layerImg, imgPosX, imgPosY - canvasHeight, canvasWidth, canvasHeight);
-            ctx.drawImage(layerImg, imgPosX, 0);
+            ctx.drawImage(layerImg, imgPosX, 0, canvasWidth, canvasHeight);
             ctx.drawImage(layerImg, imgPosX - canvasWidth, 0);
 
             imgPosX -= imgX
