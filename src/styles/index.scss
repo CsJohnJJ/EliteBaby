@@ -1,5 +1,4 @@
 #canvas{
-    background-color: white;
     border: 1px solid black;
     z-index: 9;
 }
@@ -20,28 +19,31 @@ body{
   canvas {
     position: absolute;
   }
-#l0 {
-    z-index: 1;
-}
-#l1 {
-    z-index: 2;
-}
-#l2 {
-    z-index: 3;
-}
-#l3 {
-    z-index: 4;
-}
-#l4 {
-    z-index: 5;
-}
-#l5 {
-    z-index: 1;
-}
-#l6 {
-    z-index: 7;
-}
-#l7 {
-    z-index: 8;
-}
+    #l0 {
+        z-index: 1;
+    }
+    #l1 {
+        z-index: 2;
+    }
+    #l2 {
+        z-index: 3;
+    }
+    #l3 {
+        z-index: 4;
+    }
+    #l4 {
+        z-index: 5;
+    }
+    #l5 {
+        z-index: 6;
+    }
+    #l6 {
+        z-index: 7;
+    }
+    #l7 {
+        z-index: 8;
+    }
+    #l8 {
+        z-index: 9;
+    }
 }
