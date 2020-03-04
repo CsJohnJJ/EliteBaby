@@ -6,6 +6,7 @@ import BackgroundLayer from "./background_layer";
 
 export default class EliteBaby {
     constructor(canvas){
+        this.canvas = canvas
         this.ctx = canvas.getContext("2d");
         this.canvasWidth = canvas.width;
         this.canvasHeight = canvas.height;
@@ -20,8 +21,8 @@ export default class EliteBaby {
         this.player.drawPlayer(this.ctx);
         new KeyInput(this.player);
 
-        this.backgroundlayer = new BackgroundLayer(this.canvasWidth, this.canvasHeight);
-        this.backgroundlayer.drawLayer(this.ctx);
+        // this.backgroundlayer = new BackgroundLayer(this.canvasWidth, this.canvasHeight);
+        // this.backgroundlayer.drawLayer(this.ctx);
     }
 
     clear(){
@@ -30,7 +31,8 @@ export default class EliteBaby {
 
     gameUpdate(){
         this.clear();
-        this.backgroundlayer.drawLayer(this.ctx);
+
+        // this.backgroundlayer.drawLayer(this.ctx);  //draw 1 layer background
         this.player.newPos();
         this.player.drawPlayer(this.ctx);
         requestAnimationFrame(this.gameUpdate);
