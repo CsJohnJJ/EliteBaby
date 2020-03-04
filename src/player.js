@@ -4,6 +4,7 @@ export default class Player {
         this.canvasHeight = canvasHeight;
         this.playerWidth = 60;
         this.playerHeight = 80;
+        this.isColliding = false;
         this.ground = true;
         this.jumping = false;
         this.falling = false;
