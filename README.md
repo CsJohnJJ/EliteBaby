@@ -25,13 +25,13 @@ https://wireframe.cc/O51HuI
 ## Implementation Timeline 
 
 - Day 1
-    - Game logic/canvas/research
+    - Game logic & Canvas & Research
 - Day 2
-    - Game logic/canvas(TBA)
+    - Game logic & Player Controller/Input & Research
 - Day 3
-    - Game logic/canvas(TBA)
+    - Background Scrolling & Collison Detection & Research
 - Day 4
-    - Game logic/canvas(TBA)
+    - Collision of player & tile
 - Day 5
     - Game logic/canvas(TBA)
 
