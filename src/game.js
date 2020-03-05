@@ -1,6 +1,8 @@
 import Player from "./player";
 import KeyInput from "./key_input";
 import Tile from "./tile";
+import Bottle from "./food";
+import Candy from "./flag";
 
 
 export default class EliteBaby {
@@ -15,6 +17,7 @@ export default class EliteBaby {
         this.gameUpdate();
         this.gameObjects;
         this.player;
+        this.renderBottle = this.renderBottle.bind(this);
     }
 
     newGame(){
@@ -25,51 +28,41 @@ export default class EliteBaby {
         // this.object = new Tile(this.ctx, 900, 500, -1, 0)
         // this.object.drawTile();
 
-        this.gameObjects = [ new Tile(this.ctx, 900, 500, -1, 0), 
+
+        //hard code level map
+        this.gameObjects = [
+                        new Tile(this.ctx, 100, 560, -1, 0),
+            new Bottle(this.ctx, 300, 520, -1, 0),    
+                        new Tile(this.ctx, 220, 560, -1, 0),
+                        new Tile(this.ctx, 900, 500, -1, 0),
+            new Bottle(this.ctx, 300, 400, -1, 0), 
                         new Tile(this.ctx, 1000, 400, -1, 0),
                         new Tile(this.ctx, 1200, 450, -1, 0),
                         new Tile(this.ctx, 1300, 350, -1, 0),
+            new Bottle(this.ctx, 600, 400, -1, 0),
                         new Tile(this.ctx, 1400, 200, -1, 0),
-                        new Tile(this.ctx, 1400, 200, -1, 0),
+                        new Tile(this.ctx, 1400, 100, -1, 0),
+                        new Tile(this.ctx, 1600, 200, -1, 0),
                         new Tile(this.ctx, 1600, 300, -1, 0),
                         new Tile(this.ctx, 1720, 300, -1, 0),
                         new Tile(this.ctx, 1840, 300, -1, 0),
                         new Tile(this.ctx, 1960, 300, -1, 0),
                         new Tile(this.ctx, 2080, 300, -1, 0),
-                        new Tile(this.ctx, 2200, 300, -1, 0)
+                        new Tile(this.ctx, 2200, 300, -1, 0),
+            new Candy(this.ctx, 500, 300, -1, 0)
                     ];
         
     }
 
+   
     rectIntersect(x1, y1, w1, h1, x2, y2, w2, h2) {
         // Check x and y for overlap
-        if (x2 > w1 + x1 || x1 > w2 + x2 || y2 > h1 + y1 || y1 > h2 + y2) {
+        if (x2 > w1 + x1 || x1 > w2 + x2 || y2 > h1 + y1 || y1 > h2 + y2) 
+        {
             return false;
         }
         return true;
     }
-
-    // detectCollisions() {
-    //     let obj1;
-    //     let obj2;
-    
-    //     //reset collision state
-    //     for (let i = 0; i < this.gameObjects.length; i++){
-    //         this.gameObjects[i].isColliding = false;
-    //     }
-    //     //check for collisions
-    //     for (let i = 0; i < this.gameObjects.length; i++){
-    //         obj1 = this.gameObjects[i];
-    //         for (let j = i + 1; j< this.gameObjects.length; j++){
-    //             obj2 = this.gameObjects[j];
-    //             //compare obj1 to obj2
-    //             if (this.rectIntersect(obj1.x, obj1.y, obj1.width, obj1.height, obj2.x, obj2.y, obj2.width, obj2.height)){
-    //                 obj1.isColliding = true;
-    //                 obj2.isColliding = true;
-    //             }
-    //         }
-    //     }
-    // }
 
     detectCollisions() {
        let player = this.player;
@@ -82,15 +75,30 @@ export default class EliteBaby {
 
         for (let i = 0; i < this.gameObjects.length; i++) {
             obj = this.gameObjects[i];
-            if (this.rectIntersect(obj.x, obj.y, obj.width, obj.height, player.positionX, player.positionY, player.playerWidth, player.playerHeight)) {
+            if (obj.constructor.name === "Tile" && this.rectIntersect(obj.x, obj.y, obj.width, obj.height, player.positionX, player.positionY, player.playerWidth, player.playerHeight)) {
                 obj.isColliding = true;
                 player.isColliding = true   
                 // player.positionX = obj.x;
-                player.positionY = obj.y - obj.height - 46;
-            }
+                player.positionY = obj.y - obj.height - 45;
+            } else if (obj.constructor.name === "Bottle" && this.rectIntersect(obj.x, obj.y, obj.width, obj.height, player.positionX, player.positionY, player.playerWidth, player.playerHeight)) {
+                obj.isColliding = true;
+                player.isColliding = true; 
+                obj.x = -100
+                player.score += 1
+            } 
+            else if (obj.constructor.name === "Candy" && this.rectIntersect         (obj.x, obj.y, obj.width, obj.height, player.positionX,     player.positionY, player.playerWidth, player.playerHeight)){
+                console.log("you win")
+            } 
         }
     }
 
+    renderBottle(bottle){
+        // debugger
+        this.ctx.font = "20px Georgia";
+        this.ctx.fillStyle = "white";
+        this.ctx.fillText("Bottles:", this.canvasWidth - 150, 20);
+        this.ctx.fillText(bottle, this.canvasWidth - 80, 20);
+    }
 
     clear(){
         this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
@@ -99,19 +107,29 @@ export default class EliteBaby {
     gameUpdate(){
         // for (let i = 0; i < gameObjects.length; i++)
         this.clear();
-        this.player.newPos();
-        this.player.drawPlayer(this.ctx);
+        // this.player.newPos();
+        // this.player.drawPlayer(this.ctx);
+        this.renderBottle(this.player.score)
 
         for (var i = 0; i < this.gameObjects.length; i++) {
             this.gameObjects[i].update();
         }
 
         this.detectCollisions();
+        this.player.newPos();
+        this.player.drawPlayer(this.ctx);
 
         for (let i = 0; i < this.gameObjects.length; i++) {
-            this.gameObjects[i].drawTile();
+            if (this.gameObjects[i].constructor.name === "Tile") {
+                this.gameObjects[i].drawTile();
+            }
+            else if (this.gameObjects[i].constructor.name === "Bottle"){
+                this.gameObjects[i].drawBottle(); 
+            } else if (this.gameObjects[i].constructor.name === "Candy") {
+                this.gameObjects[i].drawCandy();
+                // this.gameObjects[i].drawCandyEnd();
+            }
         }
-    
         // this.object.update();
         // this.object.drawTile();
         requestAnimationFrame(this.gameUpdate);
