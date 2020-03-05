@@ -9,9 +9,10 @@ Difficulty will increase overtime, the longer the user plays without restarting.
 In Elite Baby, users will be able to:
   - Move left and right
   - Jump up 
-  - Collect coins
-  - Power up
-  - See current score
+  - Collect foods
+  - See current score base on the food collected
+  - Platform is moving, disppearing
+  - Infinite scrolling background
 
 ## Wireframes 
 
@@ -38,4 +39,4 @@ https://wireframe.cc/O51HuI
 ## Bonus Features
 
 - User able to attack enemies
-- Platform is moving, disppearing
+- Power up

@@ -9,6 +9,7 @@ export default class Player {
         this.jumping = false;
         this.falling = false;
         this.jumpCount = 2
+        this.score = 0
         this.positionX = 50;
         this.positionY = 400,
         this.dx = 0;
@@ -29,8 +30,14 @@ export default class Player {
 
 
     drawPlayer(ctx) {
+        
         const playerImage = new Image();
         playerImage.src = "./src/images/Idle/Idle_000.png";
+        // playerImage.src = "./src/images/Running/Running_000.png";
+        let numRows = 15;
+        let numColumns = 1;
+        let frameWidth = 50;
+        let frameHeight = 61;
         ctx.drawImage(playerImage, this.positionX, this.positionY, this.playerWidth, this.playerHeight);
     }
 
@@ -41,10 +48,10 @@ export default class Player {
                 this.dx = 0;
                 break;
             case "left":
-                this.dx = -5;
+                this.dx = -4;
                 break
             case "right":
-                this.dx = 5;
+                this.dx = 4;
                 break;
             // case "up":
             //     this.dy = -8;
@@ -87,7 +94,7 @@ export default class Player {
     jump() {
         if (!this.jumping && !this.falling){
             this.jumping = true;
-            this.dy -= 14;
+            this.dy *= -1;
         }
     }
 

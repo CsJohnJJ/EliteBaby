@@ -1,0 +1,18 @@
+this.gameObjects = [
+    new Tile(this.ctx, 100, 560, -1, 0),
+    new Tile(this.ctx, 220, 560, -1, 0),
+    new Tile(this.ctx, 900, 500, -1, 0),
+    new Tile(this.ctx, 1000, 400, -1, 0),
+    new Tile(this.ctx, 1200, 450, -1, 0),
+    new Tile(this.ctx, 1300, 350, -1, 0),
+    new Tile(this.ctx, 1400, 200, -1, 0),
+    new Tile(this.ctx, 1400, 200, -1, 0),
+    new Tile(this.ctx, 1600, 300, -1, 0),
+    new Tile(this.ctx, 1720, 300, -1, 0),
+    new Tile(this.ctx, 1840, 300, -1, 0),
+    new Tile(this.ctx, 1960, 300, -1, 0),
+    new Tile(this.ctx, 2080, 300, -1, 0),
+    new Tile(this.ctx, 2200, 300, -1, 0),
+    new Tile(this.ctx, 2600, 400, -1, 0),
+    new Tile(this.ctx, 3000, 300, -1, 0),
+];

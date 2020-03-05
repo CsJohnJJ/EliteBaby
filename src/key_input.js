@@ -11,6 +11,7 @@ export default class KeyInput {
                 case 38:
                     // player.movePlayer("up");
                     player.jump();
+                    // player.jumping = true;
                     // player.ground = false
                     // player.onGround();
                     break;
