@@ -27,10 +27,16 @@ export default class EliteBaby {
 
         this.gameObjects = [ new Tile(this.ctx, 900, 500, -1, 0), 
                         new Tile(this.ctx, 1000, 400, -1, 0),
-                        new Tile(this.ctx, 250, 0, 2, 2),
-                        new Tile(this.ctx, 400, 150, 2, 2),
-                        new Tile(this.ctx, 350, 75, -2, 2),
-                        new Tile(this.ctx, 300, 300, 2, -2)
+                        new Tile(this.ctx, 1200, 450, -1, 0),
+                        new Tile(this.ctx, 1300, 350, -1, 0),
+                        new Tile(this.ctx, 1400, 200, -1, 0),
+                        new Tile(this.ctx, 1400, 200, -1, 0),
+                        new Tile(this.ctx, 1600, 300, -1, 0),
+                        new Tile(this.ctx, 1720, 300, -1, 0),
+                        new Tile(this.ctx, 1840, 300, -1, 0),
+                        new Tile(this.ctx, 1960, 300, -1, 0),
+                        new Tile(this.ctx, 2080, 300, -1, 0),
+                        new Tile(this.ctx, 2200, 300, -1, 0)
                     ];
         
     }
@@ -78,7 +84,9 @@ export default class EliteBaby {
             obj = this.gameObjects[i];
             if (this.rectIntersect(obj.x, obj.y, obj.width, obj.height, player.positionX, player.positionY, player.playerWidth, player.playerHeight)) {
                 obj.isColliding = true;
-                player.isColliding = true;
+                player.isColliding = true   
+                // player.positionX = obj.x;
+                player.positionY = obj.y - obj.height - 46;
             }
         }
     }
@@ -93,13 +101,17 @@ export default class EliteBaby {
         this.clear();
         this.player.newPos();
         this.player.drawPlayer(this.ctx);
+
         for (var i = 0; i < this.gameObjects.length; i++) {
             this.gameObjects[i].update();
         }
+
         this.detectCollisions();
-        for (var i = 0; i < this.gameObjects.length; i++) {
+
+        for (let i = 0; i < this.gameObjects.length; i++) {
             this.gameObjects[i].drawTile();
         }
+    
         // this.object.update();
         // this.object.drawTile();
         requestAnimationFrame(this.gameUpdate);
