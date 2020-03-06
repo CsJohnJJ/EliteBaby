@@ -12,14 +12,6 @@ export default class Tile extends GameObject {
         const tileImage = new Image();
         tileImage.src = "./src/images/tile/cloudtile.png";
         this.ctx.drawImage(tileImage, this.x, this.y, this.width, this.height)
-        // this.x += vx;
-        // if (this.x >= canvasWidth) {
-        //     this.x = 1000;
-        // } 
-
-        //placeholder, square
-        // this.ctx.fillStyle = this.isColliding ? '#ff8080' : '#0099b0';
-        // this.ctx.fillRect(this.x, this.y, this.width, this.height);
     }
 
     update(){

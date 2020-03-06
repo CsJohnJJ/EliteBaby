@@ -8,6 +8,7 @@ export default class Player {
         this.ground = true;
         this.jumping = false;
         this.falling = false;
+        this.hitBottom = false
         this.jumpCount = 2
         this.score = 0
         this.positionX = 50;
@@ -64,6 +65,8 @@ export default class Player {
         }
     }
 
+    
+
     detectWalls() {
         //left wall
         if (this.positionX < 0) {
@@ -79,6 +82,7 @@ export default class Player {
         }
          //bottom wall
         if (this.positionY + this.playerHeight > this.canvasHeight){
+            this.hitBottom = true
             this.positionY = this.canvasHeight - this.playerHeight;
         }
     }
@@ -94,7 +98,7 @@ export default class Player {
     jump() {
         if (!this.jumping && !this.falling){
             this.jumping = true;
-            this.dy *= -1;
+            this.dy *= -2;
         }
     }
 
