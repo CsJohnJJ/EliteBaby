@@ -96,9 +96,9 @@ export default class Player {
 
 
     jump() {
-        if (!this.jumping && !this.falling){
-            this.jumping = true;
+        if (!this.jumpinge){
             this.dy *= -2;
+            this.jumping = true;
         }
     }
 
