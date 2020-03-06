@@ -1,7 +1,7 @@
 import "./styles/index.scss";
-import EliteBaby from "./game";
-import drawBackground from "./background";
-import Tile from "./tile";
+import EliteBaby from "./scripts/game";
+import drawBackground from "./scripts/background";
+import Tile from "./scripts/tile";
 
 const canvas = document.getElementById("canvas");
 new EliteBaby(canvas);

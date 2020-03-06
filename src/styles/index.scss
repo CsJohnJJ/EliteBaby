@@ -12,6 +12,28 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.everythingContainer {
+    display: flex;
+}
+
+.infoContainer {
+    margin-left: 10px;
+    background: gray;
+    width: 300px;
+    height: 600px;
+}
+
+.arrowKeys {
+    width: 140px;
+    height: 100px;
+}
+.enterKey {
+    width: 80px;
+    height: 50px;
+    margin-bottom: 30;
+}
+
+
 .canvasContainer {
   min-height: 600px;
   min-width: 1000px;
