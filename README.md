@@ -1,18 +1,18 @@
 # Elite Baby 
 
 ## Background and Overview
-Elite Baby is a platform game which a user controls a baby who crawls/runs and hops/jumps onto platforms and objects to collect toys/foods/things baby like(coins). Some of these coins will be power ups to help user through the game. User will also avoid adults/other things baby dislike(enemies). Being caught by an enemy will restart the game.
-Difficulty will increase overtime, the longer the user plays without restarting. 
+Elite Baby is a platform game which a user controls a baby who runs and jumps onto platforms and objects to collect foods such as milk bottles. Some of these foods will be power ups to help user through the game. User will also avoid enemies such as broccoli. Being caught by an enemy will end the game. Difficulty will increase overtime, the longer the user plays without restarting or select from difficulty level.
 
 ## Functionality and MVPs 
 
 In Elite Baby, users will be able to:
   - Move left and right
   - Jump up 
-  - Collect foods
+  - Collect food
   - See current score base on the food collected
   - Platform is moving, disppearing
   - Infinite scrolling background
+  - Restart, pause, end game
 
 ## Wireframes 
 
@@ -21,7 +21,7 @@ https://wireframe.cc/O51HuI
 
 ## Architecture and Technology
 - JavaScript
-- Canvas
+- HTML Canvas
 
 ## Implementation Timeline 
 
@@ -32,7 +32,7 @@ https://wireframe.cc/O51HuI
 - Day 3
     - Background Scrolling & Collison Detection & Research
 - Day 4
-    - Collision of player & tile
+    - Game Menu & Start & Restart & End
 - Day 5
     - Game logic/canvas(TBA)
 
@@ -40,3 +40,5 @@ https://wireframe.cc/O51HuI
 
 - User able to attack enemies
 - Power up
+- Select map difficulty
+- Sound 
