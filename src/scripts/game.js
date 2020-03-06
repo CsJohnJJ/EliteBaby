@@ -136,7 +136,7 @@ export default class EliteBaby {
 
     play(sound) {
         sound.currentTime = 0;
-        // sound.play();
+        
     }
 
     pause(sound){
