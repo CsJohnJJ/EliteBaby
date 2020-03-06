@@ -31,11 +31,11 @@ export default class BackgroundLayer{
     // }
 
     drawLayer(){
-        // debugger
+        //  
         let { canvas, ctx, canvasWidth, canvasHeight, layerImg, imgPosX, imgPosY, imgX } = this;
 
         function loop(){
-            // debugger
+            //  
             ctx.clearRect(0,0, 1000, 600);
 
             ctx.drawImage(layerImg, imgPosX, 0, canvasWidth, canvasHeight);
