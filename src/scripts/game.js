@@ -61,8 +61,8 @@ export default class EliteBaby {
             new Bottle(this.ctx, 2100, 250, -1, 0),
             new Candy(this.ctx, 3000, 300, -1, 0)
         ];
-        
-        // let gameObjects;
+
+        // create player
         this.player = new Player(this.canvasWidth, this.canvasHeight);
         this.player.drawPlayer(this.ctx);
         new KeyInput(this.player);
@@ -171,24 +171,24 @@ export default class EliteBaby {
         for (let i = 0; i < this.gameObjects.length; i++) {
             obj = this.gameObjects[i];
             //  let prev = obj.y - obj.height - 55
-            if (obj.constructor.name === "Tile" && this.rectIntersect(obj.x, obj.y, obj.width, obj.height, player.positionX, player.positionY, player.playerWidth, player.playerHeight)) {
+            if (obj instanceof Tile && this.rectIntersect(obj.x, obj.y, obj.width, obj.height, player.positionX, player.positionY, player.playerWidth, player.playerHeight)) {
                 obj.isColliding = true;
                 player.isColliding = true;
                 player.jumping = false;   
                 player.ground = true;
                 player.positionX -= 1;
                 player.positionY = obj.y - obj.height - 55;
-            } else if (obj.constructor.name === "Bottle" && this.rectIntersect(obj.x, obj.y, obj.width, obj.height, player.positionX, player.positionY, player.playerWidth, player.playerHeight)) {
+            } else if (obj instanceof Bottle && this.rectIntersect(obj.x, obj.y, obj.width, obj.height, player.positionX, player.positionY, player.playerWidth, player.playerHeight)) {
                 this.play(this.bottleSound);
                 obj.isColliding = true;
                 player.isColliding = true; 
                 obj.x = -100
                 player.score += 1
             } 
-            else if (obj.constructor.name === "Candy" && this.rectIntersect         (obj.x, obj.y, obj.width, obj.height, player.positionX,     player.positionY, player.playerWidth, player.playerHeight)){
+            else if (obj instanceof Candy && this.rectIntersect         (obj.x, obj.y, obj.width, obj.height, player.positionX,     player.positionY, player.playerWidth, player.playerHeight)){
                 this.isWon = true
             } 
-            else if (obj.constructor.name === "Cabbage" && this.rectIntersect(obj.x, obj.y, obj.width, obj.height, player.positionX, player.positionY, player.playerWidth, player.playerHeight)) {
+            else if (obj instanceof Cabbage && this.rectIntersect(obj.x, obj.y, obj.width, obj.height, player.positionX, player.positionY, player.playerWidth, player.playerHeight)) {
                 this.player.gameOver = true
                 this.pause(this.gameMusic)
             } 
