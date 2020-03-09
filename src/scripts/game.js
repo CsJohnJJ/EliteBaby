@@ -31,13 +31,6 @@ export default class EliteBaby {
     }
 
     newGame(){
-        // let gameObjects;
-        this.player = new Player(this.canvasWidth, this.canvasHeight);
-        this.player.drawPlayer(this.ctx);
-        new KeyInput(this.player);
-        this.play(this.gameMusic);
-        this.playingGame = true;
-
         //hard code level map
         this.gameObjects = [
             new Tile(this.ctx, 100, 560, -1, 0),
@@ -69,15 +62,22 @@ export default class EliteBaby {
             new Candy(this.ctx, 3000, 300, -1, 0)
         ];
         
+        // let gameObjects;
+        this.player = new Player(this.canvasWidth, this.canvasHeight);
+        this.player.drawPlayer(this.ctx);
+        new KeyInput(this.player);
+        this.play(this.gameMusic);
+        this.playingGame = true;
+        
     }
-
+    
     enterKey(event){
         if(event.keyCode ===13){
             document.removeEventListener("keydown", this.enterKey);
             this.newGame();
         }
     }
-
+    
     restartKey(event) {
         if (event.keyCode === 82) {
             this.isWon = false;
