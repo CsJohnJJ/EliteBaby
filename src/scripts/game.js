@@ -136,7 +136,7 @@ export default class EliteBaby {
 
     play(sound) {
         sound.currentTime = 0;
-        
+        sound.play();
     }
 
     pause(sound){
@@ -152,6 +152,13 @@ export default class EliteBaby {
         return true;
     }
 
+    hitTile(x1, y1, w1, h1, x2, y2, w2, h2){
+        if (y1 - (h1/2) >= y2 + (h2/2)){
+            return true;
+        }
+        return false
+    }
+
     detectCollisions() {
        let player = this.player;
        let obj;
@@ -163,11 +170,14 @@ export default class EliteBaby {
 
         for (let i = 0; i < this.gameObjects.length; i++) {
             obj = this.gameObjects[i];
+            //  let prev = obj.y - obj.height - 55
             if (obj.constructor.name === "Tile" && this.rectIntersect(obj.x, obj.y, obj.width, obj.height, player.positionX, player.positionY, player.playerWidth, player.playerHeight)) {
                 obj.isColliding = true;
-                player.isColliding = true   
+                player.isColliding = true;
+                player.jumping = false;   
+                player.ground = true;
                 player.positionX -= 1;
-                player.positionY = obj.y - obj.height - 45;
+                player.positionY = obj.y - obj.height - 55;
             } else if (obj.constructor.name === "Bottle" && this.rectIntersect(obj.x, obj.y, obj.width, obj.height, player.positionX, player.positionY, player.playerWidth, player.playerHeight)) {
                 this.play(this.bottleSound);
                 obj.isColliding = true;

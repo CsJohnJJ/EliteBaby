@@ -14,7 +14,7 @@ export default class Player {
         this.positionX = 50;
         this.positionY = 400,
         this.dx = 0;
-        this.dy = 5;
+        this.dy = 15; // changed from 5
         this.speed = 4;
         this.jump = this.jump.bind(this);
         // this.onGround = this.onGround.bind(this);
@@ -35,10 +35,10 @@ export default class Player {
         const playerImage = new Image();
         playerImage.src = "./src/images/Idle/Idle_000.png";
         // playerImage.src = "./src/images/Running/Running_000.png";
-        let numRows = 15;
-        let numColumns = 1;
-        let frameWidth = 50;
-        let frameHeight = 61;
+        // let numRows = 15;
+        // let numColumns = 1;
+        // let frameWidth = 50;
+        // let frameHeight = 61;
         ctx.drawImage(playerImage, this.positionX, this.positionY, this.playerWidth, this.playerHeight);
     }
 
@@ -58,9 +58,9 @@ export default class Player {
             //     this.dy = -8;
             //     break
             case "gravity":
-                this.dy = 7;
-                this.jumping = false;
-                // this.falling = true
+                this.dy = 15;
+                this.ground = false
+                // this.jumping = false;
                 break    
         }
     }
@@ -96,8 +96,8 @@ export default class Player {
 
 
     jump() {
-        if (!this.jumpinge){
-            this.dy *= -2;
+        if ((!this.jumping) && this.ground){
+            this.dy *= -0.7;
             this.jumping = true;
         }
     }
@@ -117,9 +117,9 @@ export default class Player {
     //     }
     // }
 
-    onGround(){
-        (this.positionY + this.playerHeight === this.canvasHeight) ? this.falling = false : null
-    }
+    // onGround(){
+    //     (this.positionY + this.playerHeight === this.canvasHeight) ? this.ground = false : null
+    // }
 
 
 }
