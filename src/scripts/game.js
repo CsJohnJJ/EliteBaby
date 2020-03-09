@@ -62,6 +62,21 @@ export default class EliteBaby {
             new Candy(this.ctx, 3000, 300, -1, 0)
         ];
 
+        for (let i = 0; i < this.gameObjects.length; i++) {
+            if (this.gameObjects[i].constructor.name === "Tile") {
+                this.gameObjects[i].drawTile();
+            }
+            else if (this.gameObjects[i].constructor.name === "Bottle") {
+                this.gameObjects[i].drawBottle();
+            } else if (this.gameObjects[i].constructor.name === "Candy") {
+                this.gameObjects[i].drawCandyBottom();
+                this.gameObjects[i].drawCandyEnd();
+            }
+            else if (this.gameObjects[i].constructor.name === "Cabbage") {
+                this.gameObjects[i].drawCabbage();
+            }
+        }
+        
         // create player
         this.player = new Player(this.canvasWidth, this.canvasHeight);
         this.player.drawPlayer(this.ctx);
