@@ -63,16 +63,16 @@ export default class EliteBaby {
         ];
 
         for (let i = 0; i < this.gameObjects.length; i++) {
-            if (this.gameObjects[i].constructor.name === "Tile") {
+            if (this.gameObjects[i] instanceof Tile) {
                 this.gameObjects[i].drawTile();
             }
-            else if (this.gameObjects[i].constructor.name === "Bottle") {
+            else if (this.gameObjects[i] instanceof Bottle) {
                 this.gameObjects[i].drawBottle();
-            } else if (this.gameObjects[i].constructor.name === "Candy") {
+            } else if (this.gameObjects[i] instanceof Candy) {
                 this.gameObjects[i].drawCandyBottom();
                 this.gameObjects[i].drawCandyEnd();
             }
-            else if (this.gameObjects[i].constructor.name === "Cabbage") {
+            else if (this.gameObjects[i] instanceof Cabbage) {
                 this.gameObjects[i].drawCabbage();
             }
         }
@@ -238,16 +238,16 @@ export default class EliteBaby {
             this.player.drawPlayer(this.ctx);
 
             for (let i = 0; i < this.gameObjects.length; i++) {
-                if (this.gameObjects[i].constructor.name === "Tile") {
+                if (this.gameObjects[i] instanceof Tile) {
                     this.gameObjects[i].drawTile();
                 }
-                else if (this.gameObjects[i].constructor.name === "Bottle"){
+                else if (this.gameObjects[i] instanceof Bottle){
                     this.gameObjects[i].drawBottle(); 
-                } else if (this.gameObjects[i].constructor.name === "Candy") {
+                } else if (this.gameObjects[i] instanceof Candy) {
                     this.gameObjects[i].drawCandyBottom();
                     this.gameObjects[i].drawCandyEnd();
                 }
-                else if (this.gameObjects[i].constructor.name === "Cabbage") {
+                else if (this.gameObjects[i] instanceof Cabbage) {
                     this.gameObjects[i].drawCabbage();
                 }
             }
