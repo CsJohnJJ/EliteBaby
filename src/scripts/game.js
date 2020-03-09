@@ -64,6 +64,7 @@ export default class EliteBaby {
 
         for (let i = 0; i < this.gameObjects.length; i++) {
             if (this.gameObjects[i] instanceof Tile) {
+                console.log("hit tile newgame")
                 this.gameObjects[i].drawTile();
             }
             else if (this.gameObjects[i] instanceof Bottle) {
@@ -239,6 +240,7 @@ export default class EliteBaby {
 
             for (let i = 0; i < this.gameObjects.length; i++) {
                 if (this.gameObjects[i] instanceof Tile) {
+                    console.log("hit tile loop")
                     this.gameObjects[i].drawTile();
                 }
                 else if (this.gameObjects[i] instanceof Bottle){
