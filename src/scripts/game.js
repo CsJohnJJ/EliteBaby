@@ -103,9 +103,6 @@ export default class EliteBaby {
 
     gameMenu(){
         this.clear();
-        // const menuImg = new Image();
-        // menuImg.src = "./src/images/background/winbackground.png";
-        // this.ctx.drawImage(menuImg, 0, 0, this.canvasWidth, this.canvasHeight);
         this.ctx.shadowColor = "black";
         this.ctx.shadowBlur = 10;
         this.ctx.font = "50px Georgia";
@@ -128,16 +125,16 @@ export default class EliteBaby {
     }
     
     gameOver(){
-            this.clear();
-            const gameOverImg = new Image();
-            gameOverImg.src = "./src/images/background/losebackground.png";
-            this.ctx.drawImage(gameOverImg, 0, 0, this.canvasWidth, this.canvasHeight)
-            this.ctx.shadowColor = "black";
-            this.ctx.shadowBlur = 10;
-            this.ctx.font = "50px Georgia";
+        this.clear();
+        const gameOverImg = new Image();
+        gameOverImg.src = "./src/images/background/losebackground.png";
+        this.ctx.drawImage(gameOverImg, 0, 0, this.canvasWidth, this.canvasHeight)
+        this.ctx.shadowColor = "black";
+        this.ctx.shadowBlur = 10;
+        this.ctx.font = "50px Georgia";
         this.ctx.fillStyle = "white";
-            this.ctx.fillText("You Lost, It's Time For Bed", 220, 250);
-            this.ctx.fillText("Press \'r\' to try again", 300, 350);
+        this.ctx.fillText("You Lost, It's Time For Bed", 220, 250);
+        this.ctx.fillText("Press \'r\' to try again", 300, 350);
     }
 
 
@@ -158,8 +155,8 @@ export default class EliteBaby {
         sound.pause();
     }
    
-    rectIntersect(x1, y1, w1, h1, x2, y2, w2, h2) {
-        // Check x and y for overlap
+    objCollision(x1, y1, w1, h1, x2, y2, w2, h2) {
+        // Check x and y for overlap, obj to player
         if (x2 > w1 + x1 || x1 > w2 + x2 || y2 > h1 + y1 || y1 > h2 + y2) 
         {
             return false;
@@ -167,11 +164,25 @@ export default class EliteBaby {
         return true;
     }
 
-    hitTile(x1, y1, w1, h1, x2, y2, w2, h2){
-        if (y1 - (h1/2) >= y2 + (h2/2)){
-            return true;
+    // objCollision(x1, y1, w1, h1, x2, y2, w2, h2) {
+    //     if (x1 < x2 + w2 
+    //         &&
+    //         x1 + w1 > x2 
+    //         &&
+    //         y1 < y2 + h2 
+    //         &&
+    //         y1 + h1 > y2
+    //         ){
+    //             return true;
+    //         }
+    //     return false;
+    // }
+
+    tileCollision(x1, y1, w1, h1, x2, y2, w2, h2){
+        if (y2 < y1 - h1){
+            return true; 
         }
-        return false
+        return false;
     }
 
     detectCollisions() {
@@ -186,24 +197,24 @@ export default class EliteBaby {
         for (let i = 0; i < this.gameObjects.length; i++) {
             obj = this.gameObjects[i];
             //  let prev = obj.y - obj.height - 55
-            if (obj instanceof Tile && this.rectIntersect(obj.x, obj.y, obj.width, obj.height, player.positionX, player.positionY, player.playerWidth, player.playerHeight)) {
+            if (obj instanceof Tile && this.objCollision(obj.x, obj.y, obj.width, obj.height, player.positionX, player.positionY, player.playerWidth, player.playerHeight)) {
                 obj.isColliding = true;
                 player.isColliding = true;
                 player.jumping = false;   
                 player.ground = true;
                 player.positionX -= 1;
-                player.positionY = obj.y - obj.height - 55;
-            } else if (obj instanceof Bottle && this.rectIntersect(obj.x, obj.y, obj.width, obj.height, player.positionX, player.positionY, player.playerWidth, player.playerHeight)) {
+                player.positionY = obj.y - obj.height - 54;
+            } else if (obj instanceof Bottle && this.objCollision(obj.x, obj.y, obj.width, obj.height, player.positionX, player.positionY, player.playerWidth, player.playerHeight)) {
                 this.play(this.bottleSound);
                 obj.isColliding = true;
                 player.isColliding = true; 
                 obj.x = -100
                 player.score += 1
             } 
-            else if (obj instanceof Candy && this.rectIntersect         (obj.x, obj.y, obj.width, obj.height, player.positionX,     player.positionY, player.playerWidth, player.playerHeight)){
+            else if (obj instanceof Candy && this.objCollision(obj.x, obj.y, obj.width, obj.height, player.positionX,     player.positionY, player.playerWidth, player.playerHeight)){
                 this.isWon = true
             } 
-            else if (obj instanceof Cabbage && this.rectIntersect(obj.x, obj.y, obj.width, obj.height, player.positionX, player.positionY, player.playerWidth, player.playerHeight)) {
+            else if (obj instanceof Cabbage && this.objCollision(obj.x, obj.y, obj.width, obj.height, player.positionX, player.positionY, player.playerWidth, player.playerHeight)) {
                 this.player.gameOver = true
                 this.pause(this.gameMusic)
             } 
