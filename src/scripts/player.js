@@ -49,10 +49,10 @@ export default class Player {
                 this.dx = 0;
                 break;
             case "left":
-                this.dx = -4;
+                this.dx = -3;
                 break
             case "right":
-                this.dx = 4;
+                this.dx = 3;
                 break;
             // case "up":
             //     this.dy = -8;
@@ -97,7 +97,7 @@ export default class Player {
 
     jump() {
         if ((!this.jumping) && this.ground){
-            this.dy *= -0.7;
+            this.dy *= -0.3;
             this.jumping = true;
         }
     }
