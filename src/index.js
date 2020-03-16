@@ -1,3 +1,4 @@
+import "./styles/reset.css";
 import "./styles/index.scss";
 import EliteBaby from "./scripts/game";
 import drawBackground from "./scripts/background";

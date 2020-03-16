@@ -8,7 +8,19 @@
 </head>
 
 <body>
-    <div class="everythingContainer">
+    <header class="headerContainer">
+        <p class="logo">Elite Baby</p>
+        <div>
+            <a href="https://jianjiang.me" target="_blank" class="icon brands alt fa-angellist footer-icon"><span
+                    class="label">About Me</span></a>
+            <a href="https://linkedin.com/in/john-jiangjj" target="_blank" class="icon brands alt fa-linkedin-in"><span
+                    class="label">LinkedIn</span></a>
+            <a href="https://github.com/CsJohnJJ/EliteBaby" target="_blank" class="icon brands alt fa-github"><span
+                    class="label">GitHub</span></a>
+            </div>
+    </header>
+    <div class="bodyContainer">
+        <div class="everythingContainer">
         <div class="canvasContainer">
             <canvas id="l0" width="1000px" height="600px"></canvas>
             <canvas id="l1" width="1000px" height="600px"></canvas>
@@ -24,9 +36,10 @@
         <div class="infoContainer">
             <div class="infoTitle">Epic Baby</div>
             <div class="howtoContainer">
-                <div>How To Play:</div>
+                <div class="infoHowTo">How To Play:</div>
                 <div>You are a super baby with powers of super strength and super jump. Collect as many bottle as you can before reaching the lolipop at the end of the level without falling off the clouds. Avoid all vegetables.</div>
-                <ul>Keys:
+                <p class="infoControl">Controls:</p>
+                <ul>
                     <li>Press "Enter" key to start game</li>
                     <li>Up arrow to Jump</li>
                     <li>Left arrow to move Left</li>
@@ -35,12 +48,25 @@
                 </ul>
                 <img src="src/images/info/arrows.png" class="arrowKeys"/>
                 <img src="src/images/info/enter-key.png" class="enterKey" />
+
+                <img class="babyIdle" src="src/images/Idle/babyIdling.gif"></img>
+
+                <!-- <ul class="icons">
+                    <li><a href="https://jianjiang.me" target="_blank" class="icon brands alt fa-angellist footer-icon"><span
+                                class="label">Personal Site</span></a></li>
+                    <li><a href="https://linkedin.com/in/john-jiangjj" target="_blank" class="icon brands alt fa-linkedin-in"><span
+                                class="label">LinkedIn</span></a></li>
+                    <li><a href="https://github.com/CsJohnJJ/EliteBaby" target="_blank" class="icon brands alt fa-github"><span
+                                class="label">GitHub</span></a></li>
+                
+                </ul> -->
+        
             </div>
         </div>   
+        </div>
     </div>  
     <script src="./dist/main.js"></script>
-    
-    
+
 </body>
 
 </html>
