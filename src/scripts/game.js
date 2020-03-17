@@ -247,6 +247,7 @@ export default class EliteBaby {
             this.detectCollisions();
             this.player.newPos();
             this.player.drawPlayer(this.ctx);
+            // this.player.drawRunning();
 
             for (let i = 0; i < this.gameObjects.length; i++) {
                 if (this.gameObjects[i] instanceof Tile) {

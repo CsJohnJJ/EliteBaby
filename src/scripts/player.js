@@ -16,6 +16,8 @@ export default class Player {
         this.dx = 0;
         this.dy = 15; // changed from 5
         this.speed = 4;
+        this.direction = "right";
+        this.frameCount = 0;
         this.jump = this.jump.bind(this);
         // this.onGround = this.onGround.bind(this);
     }
@@ -31,7 +33,6 @@ export default class Player {
 
 
     drawPlayer(ctx) {
-        
         const playerImage = new Image();
         playerImage.src = "./src/images/Idle/Idle_000.png";
         // playerImage.src = "./src/images/Running/Running_000.png";
@@ -53,6 +54,7 @@ export default class Player {
                 break
             case "right":
                 this.dx = 3;
+                // this.drawRunning(this.frameCount);
                 break;
             // case "up":
             //     this.dy = -8;
@@ -99,9 +101,22 @@ export default class Player {
         if ((!this.jumping) && this.ground){
             this.dy *= -0.3;
             this.jumping = true;
+            this.direction = "up"
         }
     }
 
+    drawRunning(frameCount){
+        let spriteMap = new Image();
+        spriteMap.src = "./src/images/Running/Running_All.png"
+        if (this.direction === "right"){
+            this.ctx.drawImage(spriteMap(Math.floor(frameCount / 2) % 12) * 126.4 + 1,
+                0,
+                126.4,
+                175,
+                this.x, this.y,
+                this.width + 5, this.height);
+        }
+    }
 
 
     // double jump need fix, laggy
