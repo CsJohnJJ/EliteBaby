@@ -107,8 +107,10 @@ export default class EliteBaby {
         this.ctx.shadowBlur = 10;
         this.ctx.font = "50px Georgia";
         this.ctx.fillStyle = "lightgray";
-        this.ctx.fillText("Elite Baby", 80, 300)
         this.ctx.fillText("Press \'enter\' to play", 300, 400);
+        const title = new Image();
+        title.src ="./src/images/ebdetail.png";
+        this.ctx.drawImage(title, 10, 100)
     }
 
     youWin(){
