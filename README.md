@@ -18,10 +18,11 @@ In Elite Baby, users will be able to:
 
 ## Wireframes 
 
+#### Main Menu
 <img src="https://user-images.githubusercontent.com/50147749/77349542-8915cb80-6d11-11ea-942f-a019b9d3195d.png">
-Main Menu
+
+#### Gameplay
 <img src="https://user-images.githubusercontent.com/50147749/77349611-a8145d80-6d11-11ea-8b25-53984d4999b9.png">
-Gameplay
 
 
 ## Architecture and Technology
