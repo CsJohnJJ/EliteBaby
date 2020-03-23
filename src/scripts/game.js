@@ -22,12 +22,15 @@ export default class EliteBaby {
         this.player;
         this.isWon = false;
         this.playingGame = false;
+        this.musicOn = true;
         this.gameMusic;
         this.renderBottle = this.renderBottle.bind(this);
         this.enterKey = this.enterKey.bind(this);
         document.addEventListener('keydown', this.enterKey);
         this.restartKey = this.restartKey.bind(this);
         document.addEventListener('keydown', this.restartKey);
+        this.musicPlayPause = this.musicPlayPause.bind(this);
+        document.addEventListener("keydown", this.musicPlayPause);
     }
 
     newGame(){
@@ -98,6 +101,18 @@ export default class EliteBaby {
             this.isWon = false;
             this.player.gameOver = false
             this.newGame();
+        }
+    }
+
+    musicPlayPause(event){
+        if (event.keyCode === 77) {
+            if (this.musicOn){
+            this.musicOn = false;
+            this.pause(this.gameMusic);
+            } else {
+                this.musicOn = true;
+                this.play(this.gameMusic);
+            }
         }
     }
 
