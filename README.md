@@ -14,32 +14,38 @@ In Elite Baby, users will be able to:
   - Platform is moving, disppearing
   - Infinite scrolling background
   - Restart, pause, end game
+  - Sound
 
 ## Wireframes 
 
-<img src="https://user-images.githubusercontent.com/50147749/75635796-e2914b80-5be6-11ea-9064-05eb56cad8cd.png">
-https://wireframe.cc/O51HuI
+<img src="https://user-images.githubusercontent.com/50147749/77349542-8915cb80-6d11-11ea-942f-a019b9d3195d.png">
+Main Menu
+<img src="https://user-images.githubusercontent.com/50147749/77349611-a8145d80-6d11-11ea-8b25-53984d4999b9.png">
+Gameplay
+
 
 ## Architecture and Technology
 - JavaScript
-- HTML Canvas
+- HTML
+- CSS
+- Canvas
 
 ## Implementation Timeline 
 
 - Day 1
     - Game logic & Canvas & Research
 - Day 2
-    - Game logic & Player Controller/Input & Research
+    - Game logic & Player Controller/Input
 - Day 3
-    - Background Scrolling & Collison Detection & Research
+    - Background Scrolling & Collison Detection
 - Day 4
     - Game Menu & Start & Restart & End
 - Day 5
-    - Game logic/canvas(TBA)
+    - Game logic/canvas
 
 ## Bonus Features
 
 - User able to attack enemies
 - Power up
 - Select map difficulty
-- Sound 
+
