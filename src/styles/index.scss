@@ -11,7 +11,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 80px;
+    height: 100px;
     text-align: center;
 }
 
@@ -28,7 +28,7 @@ header{
     align-items: center;
     justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
-    padding-top: 5rem;
+    padding-top: 4rem;
 
 }
 
@@ -40,29 +40,42 @@ header{
 .infoContainer {
     color:#ac3636;
     margin-left: 10px;
-    background: transparent;
+    background: #90dede;
     width: 300px;
     height: 600px;
     border: 1px solid black;
 }
+
 ul{
     list-style: none;
 }
-.infoTitle{
 
-    text-align: center;
-    font-size: 2rem;
+.infoTitle{
+    margin-left: 3rem;
+    min-width: 100px;
+    height: 50px;
     padding-bottom: 1rem;
 }
+
 
 .infoControl{
     text-align: center;
     font-weight: 700;
+    padding: 1rem;
 }
 
 .infoHowTo{
+    padding: 1rem;
     text-align: center;
     font-weight: 700;
+}
+
+.infoDetail, .infoKeyInput{
+    padding: 0 1rem;
+}
+
+.infoKeyInput>li{
+    padding-bottom: .5rem;
 }
 
 .arrowKeys {
@@ -117,12 +130,16 @@ ul{
 }
 
 .babyIdle{
-    width: 191px;
-    height: 191px;
+    width: 120px;
+    height: 120px;
+    padding-left: 2rem;
 }
 
 .navLink{
     padding-right: 1rem;
+}
+.navLinks{
+    padding-right: 2rem;
 }
 
 .navLink > img{
@@ -130,3 +147,8 @@ ul{
     height: 50px;
 }
 
+.eblogo{
+    margin-left: 2rem;
+    width: 350px;
+    height: 100px;
+}
