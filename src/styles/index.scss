@@ -130,9 +130,8 @@ ul{
 }
 
 .babyIdle{
-    width: 120px;
-    height: 120px;
-    padding-left: 2rem;
+    width: 110px;
+    height: 110px;
 }
 
 .navLink{
@@ -151,4 +150,14 @@ ul{
     margin-left: 2rem;
     width: 350px;
     height: 100px;
+}
+
+.author{
+    color: black;
+    font-size: 1rem;
+}
+
+.by{
+    display: flex;
+    align-items: center;
 }
