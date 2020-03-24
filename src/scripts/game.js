@@ -122,7 +122,7 @@ export default class EliteBaby {
         this.ctx.shadowBlur = 10;
         this.ctx.font = "50px Georgia";
         this.ctx.fillStyle = "lightgray";
-        this.ctx.fillText("Press \'enter\' to play", 300, 400);
+        this.ctx.fillText("Press \'enter\' to play", 500, 400);
         const title = new Image();
         title.src ="./src/images/ebdetail.png";
         this.ctx.drawImage(title, 10, 100)
@@ -137,8 +137,8 @@ export default class EliteBaby {
         this.ctx.shadowBlur = 10;
         this.ctx.font = "50px Georgia";
         this.ctx.fillStyle = "white";
-        this.ctx.fillText("You Won! You Are Growing Up So Fast!!", 80, 300)
-        this.ctx.fillText("Press \'r\' to play again", 300, 400);
+        this.ctx.fillText("You Won! You Are Growing Up So Fast!!", 500, 300)
+        this.ctx.fillText("Press \'r\' to play again", 500, 400);
     }
     
     gameOver(){
@@ -150,8 +150,8 @@ export default class EliteBaby {
         this.ctx.shadowBlur = 10;
         this.ctx.font = "50px Georgia";
         this.ctx.fillStyle = "white";
-        this.ctx.fillText("You Lost, It's Time For Bed", 220, 250);
-        this.ctx.fillText("Press \'r\' to try again", 300, 350);
+        this.ctx.fillText("You Lost, It's Time For Bed", 500, 250);
+        this.ctx.fillText("Press \'r\' to try again", 500, 350);
     }
 
 
@@ -165,10 +165,12 @@ export default class EliteBaby {
 
     play(sound) {
         sound.currentTime = 0;
+        this.musicOn = true
         sound.play();
     }
 
     pause(sound){
+        this.musicOn = false
         sound.pause();
     }
    
@@ -239,10 +241,11 @@ export default class EliteBaby {
     }
 
     renderBottle(bottle){
-        this.ctx.font = "20px Georgia";
+        this.ctx.font = "30px Georgia";
         this.ctx.fillStyle = "white";
-        this.ctx.fillText("Bottles:", this.canvasWidth - 150, 20);
-        this.ctx.fillText(bottle, this.canvasWidth - 80, 20);
+        this.ctx.textAlign = "center";
+        this.ctx.fillText("Bottles:", this.canvasWidth - 500, 30);
+        this.ctx.fillText(bottle, this.canvasWidth - 500, 30);
     }
 
     clear(){
@@ -284,8 +287,6 @@ export default class EliteBaby {
             this.pause(this.gameMusic);
             this.gameOver();
         } else if (!this.playingGame) {
-            // this.playingGame = true;
-            this.pause(this.gameMusic);
             this.gameMenu();
         }else{
             this.pause(this.gameMusic);
