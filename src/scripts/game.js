@@ -245,7 +245,7 @@ export default class EliteBaby {
         this.ctx.fillStyle = "white";
         this.ctx.textAlign = "center";
         this.ctx.fillText("Bottles:", this.canvasWidth - 500, 30);
-        this.ctx.fillText(bottle, this.canvasWidth - 500, 30);
+        this.ctx.fillText(bottle, this.canvasWidth - 430, 30);
     }
 
     clear(){
