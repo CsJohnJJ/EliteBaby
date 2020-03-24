@@ -24,6 +24,7 @@ export default class EliteBaby {
         this.playingGame = false;
         this.musicOn = true;
         this.gameMusic;
+        this.loseSound;
         this.renderBottle = this.renderBottle.bind(this);
         this.enterKey = this.enterKey.bind(this);
         document.addEventListener('keydown', this.enterKey);
@@ -150,8 +151,11 @@ export default class EliteBaby {
         this.ctx.shadowBlur = 10;
         this.ctx.font = "50px Georgia";
         this.ctx.fillStyle = "white";
-        this.ctx.fillText("You Lost, It's Time For Bed", 500, 250);
+        this.ctx.fillText("Game Over, It's Time For Bed", 500, 250);
         this.ctx.fillText("Press \'r\' to try again", 500, 350);
+        const gameOverBaby = new Image();
+        gameOverBaby.src = "./src/images/gameover.png";
+        this.ctx.drawImage(gameOverBaby, 310, 400, 130, 130);  
     }
 
 
@@ -159,8 +163,12 @@ export default class EliteBaby {
         this.gameMusic = new Audio("./src/audio/music/gameMusic.mp3");
         this.gameMusic.volume = .4;
         this.gameMusic.loop = true;
-        this.bottleSound = new Audio("./src/audio/sound/collectItem.mp3");
+        this.bottleSound = new Audio("./src/audio/sound/bottle.mp3");
         this.bottleSound.volume = .4;
+        this.winSound = new Audio("./src/audio/sound/win.mp3");
+        this.winSound.volume = .4;
+        this.loseSound = new Audio("./src/audio/sound/lose.mp3");
+        this.loseSound.volume = 0.4;
     }
 
     play(sound) {
@@ -231,11 +239,13 @@ export default class EliteBaby {
                 player.score += 1
             } 
             else if (obj instanceof Candy && this.objCollision(obj.x, obj.y, obj.width, obj.height, player.positionX,     player.positionY, player.playerWidth, player.playerHeight)){
-                this.isWon = true
+                this.play(this.winSound);
+                this.isWon = true;
             } 
             else if (obj instanceof Cabbage && this.objCollision(obj.x, obj.y, obj.width, obj.height, player.positionX, player.positionY, player.playerWidth, player.playerHeight)) {
-                this.player.gameOver = true
+                this.player.gameOver = true;
                 this.pause(this.gameMusic)
+                this.play(this.loseSound);
             } 
         }
     }
