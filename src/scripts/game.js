@@ -20,9 +20,11 @@ export default class EliteBaby {
         this.gameUpdate();
         this.gameObjects;
         this.player;
+        this.gotHit = false
         this.isWon = false;
         this.playingGame = false;
         this.musicOn = true;
+        this.play = this.play.bind(this);
         this.gameMusic;
         this.loseSound;
         this.renderBottle = this.renderBottle.bind(this);
@@ -85,9 +87,8 @@ export default class EliteBaby {
         this.player = new Player(this.canvasWidth, this.canvasHeight);
         this.player.drawPlayer(this.ctx);
         new KeyInput(this.player);
-        this.play(this.gameMusic);
         this.playingGame = true;
-        
+        this.play(this.gameMusic)
     }
     
     enterKey(event){
@@ -108,13 +109,25 @@ export default class EliteBaby {
     musicPlayPause(event){
         if (event.keyCode === 77) {
             if (this.musicOn){
-            this.musicOn = false;
-            this.pause(this.gameMusic);
+                this.pause(this.gameMusic);
+                // this.musicOn = false;
             } else {
-                this.musicOn = true;
                 this.play(this.gameMusic);
+                // this.musicOn = true;
             }
         }
+    }
+    
+    setSound() {
+        this.gameMusic = new Audio("./src/audio/music/gameMusic.mp3");
+        this.gameMusic.volume = .4;
+        this.gameMusic.loop = true;
+        this.bottleSound = new Audio("./src/audio/sound/bottle.mp3");
+        this.bottleSound.volume = .4;
+        this.winSound = new Audio("./src/audio/sound/win.mp3");
+        this.winSound.volume = .4;
+        this.loseSound = new Audio("./src/audio/sound/lose.mp3");
+        this.loseSound.volume = 0.4;
     }
 
     gameMenu(){
@@ -144,6 +157,7 @@ export default class EliteBaby {
     
     gameOver(){
         this.clear();
+        // this.play(this.loseSound);
         const gameOverImg = new Image();
         gameOverImg.src = "./src/images/background/losebackground.png";
         this.ctx.drawImage(gameOverImg, 0, 0, this.canvasWidth, this.canvasHeight)
@@ -151,7 +165,12 @@ export default class EliteBaby {
         this.ctx.shadowBlur = 10;
         this.ctx.font = "50px Georgia";
         this.ctx.fillStyle = "white";
-        this.ctx.fillText("Game Over, It's Time For Bed", 500, 250);
+        this.ctx.fillText("Game Over", 500, 150);
+        if (this.gotHit){
+            this.ctx.fillText("Veggies Got You", 500, 250);
+        }else{
+            this.ctx.fillText("Jump Higher Next Time", 500, 250);
+        }
         this.ctx.fillText("Press \'r\' to try again", 500, 350);
         const gameOverBaby = new Image();
         gameOverBaby.src = "./src/images/gameover.png";
@@ -159,17 +178,6 @@ export default class EliteBaby {
     }
 
 
-    setSound() {
-        this.gameMusic = new Audio("./src/audio/music/gameMusic.mp3");
-        this.gameMusic.volume = .4;
-        this.gameMusic.loop = true;
-        this.bottleSound = new Audio("./src/audio/sound/bottle.mp3");
-        this.bottleSound.volume = .4;
-        this.winSound = new Audio("./src/audio/sound/win.mp3");
-        this.winSound.volume = .4;
-        this.loseSound = new Audio("./src/audio/sound/lose.mp3");
-        this.loseSound.volume = 0.4;
-    }
 
     play(sound) {
         sound.currentTime = 0;
@@ -244,6 +252,7 @@ export default class EliteBaby {
             } 
             else if (obj instanceof Cabbage && this.objCollision(obj.x, obj.y, obj.width, obj.height, player.positionX, player.positionY, player.playerWidth, player.playerHeight)) {
                 this.player.gameOver = true;
+                this.gotHit = true
                 this.pause(this.gameMusic)
                 this.play(this.loseSound);
             } 
@@ -295,6 +304,7 @@ export default class EliteBaby {
             }
         }else if (this.player.gameOver){
             this.pause(this.gameMusic);
+            // setTimeout(this.gameOver(), 2000);
             this.gameOver();
         } else if (!this.playingGame) {
             this.gameMenu();
