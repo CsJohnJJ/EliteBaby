@@ -85,7 +85,7 @@ export default class Player {
          //bottom wall
         if (this.positionY + this.playerHeight > this.canvasHeight){
             this.gameOver = true
-            this.positionY = this.canvasHeight - this.playerHeight;
+            // this.positionY = this.canvasHeight - this.playerHeight;
         }
     }
     
