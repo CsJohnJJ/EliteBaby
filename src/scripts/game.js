@@ -238,16 +238,19 @@ export default class EliteBaby {
                 player.jumping = false;   
                 player.ground = true;
                 player.positionX -= 1;
+                this.gotHit = false;
                 player.positionY = obj.y - obj.height - 54;
             } else if (obj instanceof Bottle && this.objCollision(obj.x, obj.y, obj.width, obj.height, player.positionX, player.positionY, player.playerWidth, player.playerHeight)) {
                 this.play(this.bottleSound);
                 obj.isColliding = true;
                 player.isColliding = true; 
                 obj.x = -100
+                this.gotHit = false;
                 player.score += 1
             } 
             else if (obj instanceof Candy && this.objCollision(obj.x, obj.y, obj.width, obj.height, player.positionX,     player.positionY, player.playerWidth, player.playerHeight)){
                 this.play(this.winSound);
+                this.gotHit = false;
                 this.isWon = true;
             } 
             else if (obj instanceof Cabbage && this.objCollision(obj.x, obj.y, obj.width, obj.height, player.positionX, player.positionY, player.playerWidth, player.playerHeight)) {
