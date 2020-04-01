@@ -85,6 +85,7 @@ export default class Player {
          //bottom wall
         if (this.positionY + this.playerHeight > this.canvasHeight){
             this.gameOver = true
+            new Audio("./src/audio/sound/lose.mp3").play();
             // this.positionY = this.canvasHeight - this.playerHeight;
         }
     }

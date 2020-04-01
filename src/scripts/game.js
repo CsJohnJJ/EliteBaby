@@ -156,8 +156,8 @@ export default class EliteBaby {
     }
     
     gameOver(){
-        this.clear();
         // this.play(this.loseSound);
+        this.clear();
         const gameOverImg = new Image();
         gameOverImg.src = "./src/images/background/losebackground.png";
         this.ctx.drawImage(gameOverImg, 0, 0, this.canvasWidth, this.canvasHeight)
