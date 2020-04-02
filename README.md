@@ -29,6 +29,8 @@ In Elite Baby, users will be able to:
 <img src="https://user-images.githubusercontent.com/50147749/77349611-a8145d80-6d11-11ea-8b25-53984d4999b9.png" width=500>
 </p>
 
+<img src="src/images/elitebabyplay.gif">
+
 ## Architecture and Technology
 - JavaScript
 - HTML
