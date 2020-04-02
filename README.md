@@ -26,7 +26,7 @@ In Elite Baby, users will be able to:
 #### Gameplay
 
 <p align=center>
-<img src="src/images/elitebabyplay.gif" alt="Gameplay">
+<img src="src/images/elitebaby1.gif" alt="Gameplay">
 </p>
 
 ## Architecture and Technology
