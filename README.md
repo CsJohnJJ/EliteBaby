@@ -18,7 +18,7 @@ In Elite Baby, users will be able to:
 
 ## Wireframes 
 
-<p align=center> #### Main Menu </p>
+#### Main Menu
 <p align=center>
 <img src="https://user-images.githubusercontent.com/50147749/78211520-32c82b80-747b-11ea-9d7e-ff9e635e7cd6.png" width=500>
 </p>
