@@ -125,6 +125,20 @@ function drawBackground() {
     layers.forEach(i => drawLayers(i));
 }
 ```
+Formulated simple game object classes based on Object-Oriented Programming patterns for DRY code, which lends itself easily to the reuse of code through principles of inheritance and abstraction.   
+```
+class GameObject{
+    constructor(ctx, x, y, vx, vy){
+        this.ctx = ctx;
+        this.x = x;
+        this.y = y;
+        this.vx = vx;
+        this.vy = vy;
+
+        this.isColliding = false;
+    }
+}
+```
 
 ## Architecture and Technology
 - JavaScript
