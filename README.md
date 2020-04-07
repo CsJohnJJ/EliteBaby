@@ -9,7 +9,7 @@ Elite Baby is a side scrolling platform game. A user controls a baby's run and j
 
 ## Functionality and MVPs 
 
-In Elite Baby, users can:
+#### In Elite Baby, users can:
   - Move left and right
   - Jump up 
   - Collect food
@@ -18,7 +18,7 @@ In Elite Baby, users can:
 
 #### Game Features
 
-- Game menu 
+- Game menu, simple introduction to the game 
 <p align=center>
 <img src="https://user-images.githubusercontent.com/50147749/78211520-32c82b80-747b-11ea-9d7e-ff9e635e7cd6.png" width=500 alt="Main Menu">
 </p>
