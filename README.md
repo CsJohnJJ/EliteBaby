@@ -1,7 +1,7 @@
 # Elite Baby 
 
 ## Background and Overview
-Elite Baby is a side-scrolling platform game. A user controls a baby's run and jump with right/left/up arrow keys. User will have to run across platforms, and collect objects such as milk bottles to increase their score. Users will also have to avoid enemies such as cabbage and falling off the map. Being hit by an enemy will end the game. The objective of the game is to reach the end of the level where the sweet lollipop is at. Enjoy the game here at the the<a href="http://jianjiang.me/EliteBaby/"> (Live Site)</a>
+Elite Baby is a side-scrolling platform game. A user controls a baby's run and jump with right/left/up arrow keys. User will have to run across platforms, and collect objects such as milk bottles to increase their score. Users will also have to avoid enemies such as cabbage and falling off the map. Being hit by an enemy will end the game. The objective of the game is to reach the end of the level where the sweet lollipop is at. Enjoy the game here at the <a href="http://jianjiang.me/EliteBaby/"> (Live Site)</a>
 
 <p align=center>
 <img src="src/images/elitebaby1.gif" alt="Gameplay">
