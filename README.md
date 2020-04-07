@@ -1,7 +1,7 @@
 # Elite Baby 
 
 ## Background and Overview
-Elite Baby is a side scrolling platform game. A user controls a baby's run and jump with right/left/up arrow keys. User will have to run across platforms, and collect objects such as milk bottles to increase their score. User will also have to avoid enemies such as cabbage, and falling off the map. Being hit by an enemy will end the game. Enjoy the game <a href="http://jianjiang.me/EliteBaby/">Here (Live  Site)</a>
+Elite Baby is a side scrolling platform game. A user controls a baby's run and jump with right/left/up arrow keys. User will have to run across platforms, and collect objects such as milk bottles to increase their score. User will also have to avoid enemies such as cabbage, and falling off the map. Being hit by an enemy will end the game. Enjoy the game here at the<a href="http://jianjiang.me/EliteBaby/">(Live Site)</a>
 
 <p align=center>
 <img src="src/images/elitebaby1.gif" alt="Gameplay">
@@ -14,7 +14,8 @@ Elite Baby is a side scrolling platform game. A user controls a baby's run and j
   - Jump up 
   - Collect food
   - See current score base on the food collected
-  - Restart Game at anytime
+  - Restart game at anytime
+  - Mute/unmute sound
 
 #### Game Features
 
@@ -22,8 +23,6 @@ Elite Baby is a side scrolling platform game. A user controls a baby's run and j
 <p align=center>
 <img src="https://user-images.githubusercontent.com/50147749/78211520-32c82b80-747b-11ea-9d7e-ff9e635e7cd6.png" width=500 alt="Main Menu">
 </p>
-
-- Mute/unmute sound
 
 - Implement endless background scrolling for multi layers. Each background layer has it's own velocity and element (clouds/stars/color)
 
