@@ -1,38 +1,31 @@
 # Elite Baby 
 
 ## Background and Overview
-Elite Baby is a platform game which a user controls a baby who runs and jumps onto platforms and objects to collect foods such as milk bottles. Some of these foods will be power ups to help user through the game. User will also avoid enemies such as broccoli. Being caught by an enemy will end the game. Difficulty will increase overtime, the longer the user plays without restarting or select from difficulty level.
-
-<a href="http://jianjiang.me/EliteBaby/">Live  Site</a>
-
-## Functionality and MVPs 
-
-In Elite Baby, users will be able to:
-  - Move left and right
-  - Jump up 
-  - Collect food
-  - See current score base on the food collected
-  - Platform is moving, disppearing
-  - Infinite scrolling background
-  - Restart, pause, end game
-  - Sound
-
-## Wireframes 
-
-#### Main Menu
-<p align=center>
-<img src="https://user-images.githubusercontent.com/50147749/78211520-32c82b80-747b-11ea-9d7e-ff9e635e7cd6.png" width=500 alt="Main Menu">
-</p>
-
-#### Gameplay
+Elite Baby is a side scrolling platform game. A user controls a baby's run and jump with right/left/up arrow keys. User will have to run across platforms, and collect objects such as milk bottles to increase their score. User will also have to avoid enemies such as cabbage, and falling off the map. Being hit by an enemy will end the game. Enjoy the game <a href="http://jianjiang.me/EliteBaby/">Here (Live  Site)</a>
 
 <p align=center>
 <img src="src/images/elitebaby1.gif" alt="Gameplay">
 </p>
 
-## Code Snippet 
+## Functionality and MVPs 
 
-Implement endless background scrolling for multi layers. Each background layer has it's own velocity and element (clouds/stars/color)
+In Elite Baby, users can:
+  - Move left and right
+  - Jump up 
+  - Collect food
+  - See current score base on the food collected
+  - Restart Game at anytime
+
+#### Game Features
+
+- Game menu 
+<p align=center>
+<img src="https://user-images.githubusercontent.com/50147749/78211520-32c82b80-747b-11ea-9d7e-ff9e635e7cd6.png" width=500 alt="Main Menu">
+</p>
+
+- Mute/unmute sound
+
+- Implement endless background scrolling for multi layers. Each background layer has it's own velocity and element (clouds/stars/color)
 
 ```
 default class BackgroundLayer{  
@@ -125,7 +118,8 @@ function drawBackground() {
     layers.forEach(i => drawLayers(i));
 }
 ```
-Formulated simple game object classes based on Object-Oriented Programming patterns for DRY code, which lends itself easily to the reuse of code through principles of inheritance and abstraction.   
+- Formulated simple game object classes based on Object-Oriented Programming patterns for DRY code, which lends itself easily to the reuse of code through principles of inheritance and abstraction.   
+
 ```
 class GameObject{
     constructor(ctx, x, y, vx, vy){
